@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/App.css';
 import AppRoutes from './Routes';
 import { AuthProvider } from './AuthContext'; // Import the AuthProvider responsible for managing the authentication state of the App
-import '../../../styles/global.css';
+import './styles/global.css';
 
 
 function App() { // This defines the App component, which is the main component of your React application.
