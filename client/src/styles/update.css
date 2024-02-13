@@ -1,0 +1,64 @@
+/* Container for the form */
+.form-container {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr; /* Create two equal-width columns */
+  grid-gap: 0px; /* Add some spacing between columns */
+  width: 100%;
+}
+
+/* Left column for title and description */
+.left-column {
+  grid-column: 1 / 2; /* Place in the first column */
+  margin-left: 200px;
+}
+
+/* Right column for materialsNeeded and estimatedTime */
+.right-column {
+  grid-column: 2 / 3; /* Place in the second column */
+  margin-left: 50px;
+  margin-top: 0px;
+}
+
+/* Style for each individual section (e.g., title, description, materialsNeeded, estimatedTime) */
+.section {
+  text-align: left; /* Align text to the left */
+}
+
+/* Adjust the widths of individual input elements if necessary */
+input[type="text"],
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Align the "Title" and "Estimated Time" elements at the same level */
+.label-title,
+.label-estimatedTime {
+  margin-top: 0; /* Remove top margin */
+}
+
+
+.update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px; /* Add padding for spacing */
+    margin-bottom: 50px;
+    background-color: lightgreen;
+}
+
+textarea {
+
+  background-color: white;
+
+}
+
+input {
+
+  background-color: white;
+}
+
+
+

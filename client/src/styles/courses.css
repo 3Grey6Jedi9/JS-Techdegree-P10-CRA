@@ -1,0 +1,99 @@
+.courses-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    overflow-y: auto;
+    margin-top: 0px;
+    background-color: white;
+
+}
+
+
+.courses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px; /* Add padding for spacing */
+    margin-bottom: 0;
+    background-color: lightgreen;
+}
+
+
+.detail-header-buttons {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    padding: 10px 20px; /* Add padding for spacing */
+    margin-bottom: 50px;
+    background-color: lightgoldenrodyellow;
+
+
+}
+
+
+
+
+
+.courses-title {
+    margin-left: 10px; /* Adjust the left margin as needed */
+    margin-top: 10px; /* Adjust the top margin as needed */
+}
+
+
+.courses-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.course-box {
+    background-color: lightblue;
+    padding: 60px;
+    border-radius: 5px;
+    text-align: center; /* Center text within the course box */
+}
+
+.course-box a {
+    text-decoration: none;
+    color: black;
+}
+
+.course-name {
+    font-weight: bold; /* Make the course name bold */
+    padding-bottom: 20px;
+    font-size: 18px;
+
+}
+
+.course-title {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #333; /* Adjust the text color as needed */
+}
+
+
+
+
+.signout-button {
+    margin-right: 10px; /* Push the button to the right */
+    margin-top: 10px; /* Adjust the top margin as needed */
+    background-color: #007bff; /* Background color (adjust the color as needed) */
+    color: white; /* Text color (adjust the color as needed) */
+    padding: 10px 20px; /* Padding for size (adjust as needed) */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button (adjust as needed) */
+    cursor: pointer; /* Add a cursor on hover for interactivity */
+}
+
+

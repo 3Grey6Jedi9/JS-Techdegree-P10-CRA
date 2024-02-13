@@ -1,0 +1,37 @@
+/* UserSignIn.css */
+.user-signin-container {
+    background-color: brown;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Position from the top edge of the viewport */
+    left: 0; /* Position from the left edge of the viewport */
+    width: 100%; /* Full width of the viewport */
+    height: 100%; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-signin-logo {
+    width: 800px; /* fixed width of 800px */
+    height: 400px; /* fixed height of 400px */
+    object-fit: cover; /* ensures the image covers the area without distorting aspect ratio */
+}
+
+.user-signin-button {
+    background-color: palevioletred; /* A reddish-brown tone for buttons */
+    color: white; /* Adjust text color as needed */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin-top: 10px; /* Space between buttons and other elements */
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+/* Adjust other button states as needed */
+.user-signin-button:hover {
+    background-color: mediumvioletred; /* Darker shade for hover state */
+}

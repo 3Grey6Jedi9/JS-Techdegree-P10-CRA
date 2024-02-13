@@ -1,0 +1,99 @@
+/* Assuming this is the container for the content */
+.content-container {
+  display: flex;
+  justify-content: space-between; /* Space between the two columns */
+  align-items: flex-start; /* Align items to the top */
+}
+
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start; /* Align content to the top */
+    overflow-y: auto;
+    margin-top: 0;
+    background-color: white;
+
+
+}
+
+
+
+
+/* Left column for title and description */
+.left-column {
+  width: 60%;
+  margin-right: 0;
+  color: blue;
+    text-align: left; /* Align text to the left */
+    margin-top: 0;
+    margin-left: 100px;
+    margin-bottom: 100px;
+
+}
+
+/* Right column for materialsNeeded and estimatedTime */
+.right-column {
+  width: 40%;
+  color:blue;
+    text-align: left; /* Align text to the left */
+    margin-bottom: 100px;
+
+}
+
+/* Style for each individual section (e.g., title, description, materialsNeeded, estimatedTime) */
+.section {
+    margin-bottom: 20px; /* Add some spacing between sections */
+    text-align: left; /* Align text to the left */
+    color: black;
+    font-family: "Arial";
+    margin-left: 20px;
+}
+
+
+.sectiontitle {
+    margin-bottom: 20px; /* Add some spacing between sections */
+    text-align: left; /* Align text to the left */
+    color: black;
+    font-family: "American Typewriter";
+    margin-left: 20px;
+}
+
+.title-container {
+  display: flex;
+}
+
+
+
+
+
+.delete{
+
+   margin-right: 10px; /* Push the button to the right */
+    margin-top: 10px; /* Adjust the top margin as needed */
+    background-color: red; /* Background color (adjust the color as needed) */
+    color: white; /* Text color (adjust the color as needed) */
+    padding: 10px 20px; /* Padding for size (adjust as needed) */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button (adjust as needed) */
+    cursor: pointer; /* Add a cursor on hover for interactivity */
+
+
+}
+
+/* Improving materials section style */
+
+.materials-container {
+  margin-top: 20px; /* Add some top margin for spacing */
+}
+
+.materials-title {
+  font-size: 30px; /* Increase font size for the title */
+  font-weight: bold; /* Make the title bold */
+  text-align: left; /* Center-align the title */
+}

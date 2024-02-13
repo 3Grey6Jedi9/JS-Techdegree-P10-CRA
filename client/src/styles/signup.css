@@ -1,0 +1,62 @@
+/* UserSignUp.css */
+body, html {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Full height of the viewport */
+    overflow: hidden; /* Hide scrollbars on the body */
+}
+
+.user-signup-container {
+    background-color: lightseagreen;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Position from the top edge of the viewport */
+    left: 0; /* Position from the left edge of the viewport */
+    width: 100%; /* Full width of the viewport */
+    height: 100%; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-signup-logo {
+    width: 100px; /* fixed width of 200px */
+    height: 100px; /* fixed height of 200px */
+    object-fit: cover; /* ensures the image covers the area without distorting aspect ratio */
+    position: fixed; /* Position the image fixed at the top */
+    top: 0; /* Position at the top of the viewport */
+    right: 0; /* Position at the right edge of the viewport */
+    animation: slideRight 60s linear infinite; /* Animation settings */
+
+    /* Additional styles for the image */
+    border-radius: 50%; /* Makes the image circular */
+}
+
+@keyframes slideRight {
+    0% {
+        right: 100px; /* Starting position */
+    }
+    100% {
+        right: calc(100% + 100px); /* Ending position, crossing the screen */
+    }
+}
+
+.user-signup-button {
+    background-color: palevioletred; /* A reddish-brown tone for buttons */
+    color: white; /* Adjust text color as needed */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin-top: 10px; /* Space between buttons and other elements */
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+/* Adjust other button states as needed */
+.user-signup-button:hover {
+    background-color: mediumvioletred; /* Darker shade for hover state */
+}
+
+/* Enable scrol

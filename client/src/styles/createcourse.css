@@ -1,0 +1,166 @@
+/* CSS for Create Course form */
+.create-course-container {
+  display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    overflow-y: auto;
+    margin-top: 0px;
+    background-color: white;
+}
+
+
+.create-header {
+  position: fixed; /* Fixed position at the top */
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+  right: 0; /* Stick to the right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  padding: 10px 20px;
+  background-color: lightgreen;
+  z-index: 1000; /* Optional: Set a high z-index to ensure it's on top of other content */
+}
+
+
+
+
+/* Style for validation errors */
+.validation--errors {
+  margin-top: 200px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fdd;
+  border: 1px solid #f00;
+  border-radius: 5px;
+}
+
+.validation--errors h3 {
+  color: #f00;
+  margin: 0;
+}
+
+.validation--errors ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.validation--errors li {
+  color: #f00;
+}
+
+
+button[type="submit"],
+button[type="button"] {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+
+.create-signout {
+    margin-right: 10px; /* Push the button to the right */
+    margin-top: 10px; /* Adjust the top margin as needed */
+    background-color: #007bff; /* Background color (adjust the color as needed) */
+    color: white; /* Text color (adjust the color as needed) */
+    padding: 10px 20px; /* Padding for size (adjust as needed) */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button (adjust as needed) */
+    cursor: pointer; /* Add a cursor on hover for interactivity */
+}
+
+
+
+/* Style the labels in the form */
+.create-label {
+  font-size: 33px; /* Adjust the font size as needed */
+  color: brown; /* Adjust the text color as needed */
+  margin-bottom: 5px; /* Add margin below each label for spacing */
+  display: block; /* Make labels block elements to stack them vertically */
+  font-weight: lighter; /* Make labels bold if desired */
+}
+
+
+
+
+
+
+
+
+/* Style the form as a grid with 2 columns */
+.create-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 10px; /* Add gap between grid items */
+  max-width: 100%; /* Maximum width of the form */
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 150px;
+}
+
+/* Style the form elements within the grid */
+.create-div-title {
+  grid-column: span 2; /* Span both columns for full width */
+}
+
+/* Style the labels in the form */
+.create-label {
+  font-size: 21px; /* Adjust the font size as needed */
+  color: cornflowerblue; /* Adjust the text color as needed */
+  margin-bottom: 5px; /* Add margin below each label for spacing */
+  font-weight: bold; /* Make labels bold if desired */
+  margin-right: 150px;
+}
+
+/* Style the inputs and textareas within the grid */
+.create-form input,
+.create-form textarea {
+  width: 80%; /* Full width for inputs and textareas */
+  padding: 10px; /* Add padding for spacing */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: lightpink;
+  color: white;
+  font-size: 21px;
+}
+
+/* Style the smaller input or textarea */
+.create-form .smaller-input {
+  grid-column: span 1; /* Span one column */
+  width: 80%;
+}
+
+
+.author {
+
+color: goldenrod;
+  font-size: 18px;
+  margin-right: 400px;
+}
+
+
+
+
+
+
