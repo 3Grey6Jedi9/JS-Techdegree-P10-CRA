@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Importing Axios for making API request
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {AuthProvider, useAuth} from '../AuthContext.jsx'; // Accessing authentication context
 import AliceDoor from '../assets/signin.png'
 import '../styles/signin.css' // Importing custom styles
@@ -15,6 +15,10 @@ function UserSignIn(props) {
 
   const { signIn } = useAuth(); // Accessing signIn function from context
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const { from } = location.state || { from: { pathname: '/courses' } }; // Get the intended route from state or default to '/courses'
 
   // Handling input changes for email and password field
   const handleInputChange = (e) => {
@@ -49,7 +53,7 @@ function UserSignIn(props) {
 
       if (response.status === 200) {
         signIn(response.data, password);
-        navigate('/courses');
+        navigate(from, { replace: true }); // Redirect user to the intended route
       } else {
         console.error(`Authentication failed. Status: ${response.status}`);
         if(response.status === 500){
