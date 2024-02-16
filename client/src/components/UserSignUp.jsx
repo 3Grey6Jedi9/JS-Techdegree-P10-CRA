@@ -79,6 +79,10 @@ function UserSignUp(props) {
         }
       }
     } catch (error) {
+       if (error.response && error.response.status === 400) {
+        // Validation errors returned from the API
+        setValidationErrors(error.response.data.errors);
+      }
       console.error('Error during user registration:', error);
       if(error.response.status===500){
         navigate('/error')
