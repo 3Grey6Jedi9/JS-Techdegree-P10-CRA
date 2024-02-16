@@ -13,7 +13,7 @@ function UpdateCourse({ courses }) {
   const navigate = useNavigate();
   const { id } = useParams();
   // Authentication context
-  const {signOut, user} = useAuth();
+  const {signOut, user, password} = useAuth();
   // State for storing validation errors
   const [validationErrors, setValidationErrors] = useState([]);
 
@@ -100,12 +100,7 @@ function UpdateCourse({ courses }) {
 
         e.preventDefault();
 
-    const userPassword = window.prompt('Enter your password to update the course:');
-  if (!userPassword) {
-    // User canceled the prompt
-    return;
-  }
-   const authString = `${user.emailAddress}:${userPassword}`;
+   const authString = `${user.emailAddress}:${password}`;
    const base64AuthString = btoa(authString);
    const authHeaderValue = `Basic ${base64AuthString}`;
 

@@ -13,7 +13,7 @@ function CourseDetail() {
     // Track course data, course ID, and authentication state
   const [course, setCourse] = useState(null);
   const { id } = useParams();
-  const { user, signOut } = useAuth(); // Accessing the authenticated user and signOut function
+  const { user, signOut, password } = useAuth(); // Accessing the authenticated user and signOut function
   const [isCourseOwner, setIsCourseOwner] = useState(true); // State to track if the user is the course owner
   const [OwnerData, setOwnerData] = useState(null); // State to see who is the course owner
 
@@ -35,13 +35,8 @@ function CourseDetail() {
           setIsCourseOwner(user && user.id === data.userId);
           // If not the course owner, fetching user data associated with the course
         if (!isCourseOwner) {
-            //Asking for password before executing the request (since we didn't store the plain password)
-        const userPassword = window.prompt('Enter your password to see a course created by other user:');
-  if (!userPassword) {
-    // User canceled the prompt
-    return;
-  }
-   const authString = `${user.emailAddress}:${userPassword}`;
+
+   const authString = `${user.emailAddress}:${password}`;
    const base64AuthString = btoa(authString);
    const authHeaderValue = `Basic ${base64AuthString}`;
           const userResponse = await axios.get(`http://localhost:5001/api/courses/${data.userId}`, {
@@ -99,13 +94,8 @@ function CourseDetail() {
 // This function will define the DELETE button action
   const handleDeleteCourse = async () => {
 
-      // Using window.prompt() to ask for the password
-  const userPassword = window.prompt('Enter your password to delete the course:');
-  if (!userPassword) {
-    // User canceled the prompt
-    return;
-  }
-   const authString = `${user.emailAddress}:${userPassword}`;
+
+   const authString = `${user.emailAddress}:${password}`;
    const base64AuthString = btoa(authString);
    const authHeaderValue = `Basic ${base64AuthString}`;
 
