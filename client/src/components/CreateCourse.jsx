@@ -56,6 +56,9 @@ function CreateCourse() {
         navigate(`/courses/${newCourseId}`);
       } else {
         console.error(`Network response was not ok. Status: ${response.status}`);
+        if (response.status === 500) {
+      navigate('/error')
+    }
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
@@ -63,6 +66,9 @@ function CreateCourse() {
         setValidationErrors(error.response.data.errors);
       } else {
         console.error('Error creating course:', error);
+         if(error.response.status === 500) {
+    navigate('/error')
+  }
       }
     }
   };
