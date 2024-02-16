@@ -5,13 +5,13 @@ import { useAuth } from "../AuthContext.jsx";
 import '../styles/createcourse.css'
 
 // Component to create a new course
-function CreateCourse() {
+function CreateCourse() { // Receiving password as a prop
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [estimatedTime, setEstimatedTime] = useState('');
   const [materialsNeeded, setMaterialsNeeded] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
-  const { signOut, user } = useAuth();
+  const { signOut, user, password } = useAuth();
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -29,11 +29,8 @@ function CreateCourse() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userPassword = window.prompt('Enter your password to create the course:');
-    if (!userPassword) {
-      return;
-    }
-    const authString = `${user.emailAddress}:${userPassword}`;
+
+    const authString = `${user.emailAddress}:${password}`;
     const base64AuthString = btoa(authString);
     const authHeaderValue = `Basic ${base64AuthString}`;
 

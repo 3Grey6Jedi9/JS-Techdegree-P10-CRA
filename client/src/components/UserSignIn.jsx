@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Importing Axios for making API request
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../AuthContext.jsx'; // Accessing authentication context
+import {AuthProvider, useAuth} from '../AuthContext.jsx'; // Accessing authentication context
 import AliceDoor from '../assets/signin.png'
 import '../styles/signin.css' // Importing custom styles
+
 
 
 // Function component for user sign-in
@@ -47,7 +48,7 @@ function UserSignIn(props) {
       });
 
       if (response.status === 200) {
-        signIn(response.data);
+        signIn(response.data, password);
         navigate('/courses');
       } else {
         console.error(`Authentication failed. Status: ${response.status}`);
@@ -114,8 +115,12 @@ function UserSignIn(props) {
           </button>
         </div>
       </form>
+      <AuthProvider password={password} />
     </div>
   );
 }
 
 export default UserSignIn;
+
+
+

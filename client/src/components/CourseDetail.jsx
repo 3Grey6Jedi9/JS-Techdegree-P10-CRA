@@ -7,6 +7,7 @@ import '../styles/courses.css' // Include relevant styles
 import '../styles/coursedetail.css' // Include specific styles
 
 
+
 // Defining the CourseDetail component
 function CourseDetail() {
     // Track course data, course ID, and authentication state

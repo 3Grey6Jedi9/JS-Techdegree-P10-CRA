@@ -10,8 +10,9 @@ export function useAuth() {
 }
 
 // Creating an AuthProvider component
-export function AuthProvider({ children }) { // Wrapping other components with its context
+export function AuthProvider({ children, password }) { // Wrapping other components with its context
   const [user, setUser] = useState(null);
+  const [storedPassword, setStoredPassword] = useState('');
 
   useEffect(() => {
     // Checking if user data is stored in cookies
@@ -20,12 +21,15 @@ export function AuthProvider({ children }) { // Wrapping other components with i
     if (userData) {
       // If user data exists in cookies, parse and set the user state
       setUser(JSON.parse(userData));
+      setStoredPassword(password)
     }
-  }, []);
+  }, [password]);
 
-  const signIn = (userData) => {
+  const signIn = (userData, userPassword) => {
     // Implementing sign-in logic and set the user state
     setUser(userData);
+    setStoredPassword(userPassword);
+    console.log(userPassword)
 
     // Storing user data in cookies when signed in
     Cookies.set('userData', JSON.stringify(userData), { expires: 7 }); // Setting an expiration date if needed
@@ -34,13 +38,14 @@ export function AuthProvider({ children }) { // Wrapping other components with i
   const signOut = () => {
     // Implementing sign-out logic and clear the user state
     setUser(null);
+    setStoredPassword('');
 
     // Remove user data from cookies when signed out
     Cookies.remove('userData');
   };
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, signIn, signOut, password: storedPassword }}>
       {children}
     </AuthContext.Provider>
   );
