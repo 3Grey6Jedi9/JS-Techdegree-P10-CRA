@@ -29,7 +29,6 @@ export function AuthProvider({ children, password }) { // Wrapping other compone
     // Implementing sign-in logic and set the user state
     setUser(userData);
     setStoredPassword(userPassword);
-    console.log(userPassword)
 
     // Storing user data in cookies when signed in
     Cookies.set('userData', JSON.stringify(userData), { expires: 7 }); // Setting an expiration date if needed
