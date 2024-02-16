@@ -19,19 +19,7 @@ function UpdateCourse({ courses }) {
 
 
 
- const handleVerification = () => {
-  // Checking if there are validation errors
 
-    // Checking if title and description are not null
-    if (updatedCourse.title !== '' && updatedCourse.description.trim() !== '') {
-      // If both fields are not null, trigger handleSubmit
-      handleSubmit();
-    } else {
-      // If either field is null, display validation error
-      setValidationErrors(['Please provide values for both "title" and "description"']);
-    }
-
-};
 
 
 
@@ -110,6 +98,7 @@ function UpdateCourse({ courses }) {
   // Handling form submission (updating course)
   const handleSubmit = async (e) => {
 
+        e.preventDefault();
 
     const userPassword = window.prompt('Enter your password to update the course:');
   if (!userPassword) {
@@ -131,9 +120,6 @@ function UpdateCourse({ courses }) {
   if (response.status >= 200 && response.status < 400) {
     // Successful update, navigate to the course detail page
     navigate(`/courses/${id}`);
-  } else if (response.status === 400) {
-    // Validation errors returned from the API
-    setValidationErrors(response.data.errors);
   } else {
     console.error(`Network response was not ok. Status: ${response.status}`);
     if (response.status === 500) {
@@ -141,6 +127,10 @@ function UpdateCourse({ courses }) {
     }
   }
 } catch (error) {
+      if (error.response && error.response.status === 400) {
+        // Validation errors returned from the API
+        setValidationErrors(error.response.data.errors);
+      }
   console.error('Error updating course:', error);
   if(error.response.status === 500) {
     navigate('/error')
@@ -199,7 +189,6 @@ function UpdateCourse({ courses }) {
             name="title"
             value={updatedCourse.title}
             onChange={handleInputChange}
-            required
           />
           <h2 className="author">By {user.firstName} {user.lastName}</h2>
         </div>
@@ -220,7 +209,6 @@ function UpdateCourse({ courses }) {
             name="description"
             value={updatedCourse.description}
             onChange={handleInputChange}
-            required
           />
         </div>
 
@@ -234,7 +222,7 @@ function UpdateCourse({ courses }) {
           />
         </div>
         <div>
-          <button type="button" onClick={handleVerification}>Update Course</button>
+          <button type="submit">Update Course</button>
           <button type="button" onClick={handleCancel}>Cancel</button>
         </div>
       </form>
