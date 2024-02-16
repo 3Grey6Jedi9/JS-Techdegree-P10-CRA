@@ -124,7 +124,6 @@ function UserSignUp(props) {
           name="firstName"
           value={firstName}
           onChange={handleInputChange}
-          required
         />
         <label htmlFor="lastName">Last Name:</label>
         <input
@@ -133,7 +132,6 @@ function UserSignUp(props) {
           name="lastName"
           value={lastName}
           onChange={handleInputChange}
-          required
         />
         <label htmlFor="emailAddress">Email Address:</label>
         <input
@@ -142,7 +140,6 @@ function UserSignUp(props) {
           name="emailAddress"
           value={emailAddress}
           onChange={handleInputChange}
-          required
         />
         <label htmlFor="password">Password:</label>
         <input
@@ -151,7 +148,6 @@ function UserSignUp(props) {
           name="password"
           value={password}
           onChange={handleInputChange}
-          required
         />
         <label htmlFor="confirmPassword">Confirm Password:</label>
         <input
@@ -160,7 +156,6 @@ function UserSignUp(props) {
           name="confirmPassword"
           value={confirmPassword}
           onChange={handleInputChange}
-          required
         />
         <button className="button" type="submit">Sign Up</button>
         <button className="button" type="button" onClick={handleCancel}>

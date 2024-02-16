@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88fac629-af25-4684-9c83-ab885c2861c4" name="Changes" comment="" />
+    <list default="true" id="88fac629-af25-4684-9c83-ab885c2861c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CreateCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CreateCourse.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UserSignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UserSignUp.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707837544738</updated>
       <workItem from="1707837545944" duration="16000" />
-      <workItem from="1707837576230" duration="5598000" />
+      <workItem from="1707837576230" duration="9241000" />
     </task>
     <servers />
   </component>
