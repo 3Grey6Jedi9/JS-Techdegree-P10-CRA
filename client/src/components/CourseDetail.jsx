@@ -146,7 +146,7 @@ function CourseDetail() {
       <div className="detail-container">
       <div className="courses-header">
          <h2 className="courses-title">Course Detail</h2>
-         <h4>I hope you like this course, {user.firstName} {user.lastName}!</h4>
+         <h4>I hope you like this course!</h4>
         <button onClick={handleSignOut} className="signout-button">Sign Out</button>
     </div>
         {user && isCourseOwner && (
