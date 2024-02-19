@@ -148,7 +148,7 @@ function UpdateCourse({ courses }) {
 
 
   const handleSignOut = () => {
-    signOut(); // Calling the signOut function.
+    navigate('/signout');
 
   }
 

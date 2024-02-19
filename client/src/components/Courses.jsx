@@ -44,7 +44,7 @@ function Courses() {
 
   const handleSignOut = () => {
 
-      signOut(); // Calling the signOut function to sign out the user
+      navigate('/signout'); // Calling the signOut function to sign out the user
 
 
   }

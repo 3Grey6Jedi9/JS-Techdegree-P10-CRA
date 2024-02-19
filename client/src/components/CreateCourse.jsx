@@ -75,7 +75,8 @@ function CreateCourse() { // Receiving password as a prop
   };
 
   const handleSignOut = () => {
-    signOut();
+        navigate('/signout');
+
   };
 
   return (

@@ -132,7 +132,7 @@ function CourseDetail() {
 
   // Handling the user SIGN OUT button action
   const handleSignOut = () => {
-    signOut();
+    navigate('/signout');
   };
 
 

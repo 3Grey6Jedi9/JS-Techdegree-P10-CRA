@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header'; // Importing the Header component
 import Courses from './components/Courses';
@@ -10,37 +10,43 @@ import UserSignIn from './components/UserSignIn';
 import UserSignUp from './components/UserSignUp';
 import UserSignOut from './components/UserSignOut';
 import PrivateRoute from './components/PrivateRoute'; // Import the PrivateRoute component
+import Forbidden from './components/Forbidden';
+import NotFound from './components/NotFound';
+import UnhandledError from './components/UnhandledError';
 import courses from "./components/Courses";
-import Forbidden from "./components/Forbidden.jsx";
-import NotFound from "./components/NotFound.jsx";
-import UnhandledError from "./components/UnhandledError.jsx";
+import { useAuth } from './AuthContext'; // Import the useAuth hook
+
+
+
+
 
 
 function AppRoutes() {
+    const { signOut } = useAuth(); // Access the signOut function from the authentication context
+
   return (
     <Router>
       <Routes>
+        {/* Header is always rendered */}
         <Route path="/" element={<Header />} />
-
-        {/* Protected Routes */}
-        <Route
-          path="/courses"
-          element={
-            <PrivateRoute />
-          }
-        >
-          {/* Using relative paths for nested routes */}
-          <Route path="" element={<Courses />} /> {/* Default route */}
-          <Route path="create" element={<CreateCourse />} />
-          <Route path=":id/update" element={<UpdateCourse courses={courses} />} />
-          <Route path=":id" element={<CourseDetail />} />
-          <Route path="signout" element={<UserSignOut />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
 
         {/* Unprotected Routes */}
         <Route path="/signin" element={<UserSignIn />} />
         <Route path="/signup" element={<UserSignUp />} />
+        <Route path="/courses" element={<Courses />} />
+
+        {/* Protected Routes */}
+        {/* Wrapped the CreateCourse and UpdateCourse components with PrivateRoute */}
+        <Route path="/courses/create" element={<PrivateRoute component={CreateCourse} />} />
+        {/* Pass the courses prop to the UpdateCourse component */}
+        <Route
+          path="/courses/:id/update"
+          element={<PrivateRoute component={(props) => <UpdateCourse {...props} courses={courses} />} />}
+        />
+
+        {/* Unprotected Routes */}
+        <Route path="/courses/:id" element={<CourseDetail />} />
+        <Route path="/signout" element={<UserSignOut signOut={signOut} />} />
 
         {/* Error Routes */}
         <Route path="/notfound" element={<NotFound />} />
@@ -49,18 +55,9 @@ function AppRoutes() {
 
         {/* Catching-all route for undefined paths */}
         <Route path="*" element={<NotFound />} />
-
       </Routes>
     </Router>
   );
 }
 
-
 export default AppRoutes;
-
-
-
-/* This component, acts as the central navigation hub for your React application.
-It defines the routes that guide users to different sections of the app based on the URLs they visit.
-It incorporates authentication protection for specific routes using the PrivateRoute component
-It also handles various error scenarios by defining specific routes for them. */

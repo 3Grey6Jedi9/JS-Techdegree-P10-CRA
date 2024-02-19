@@ -14,7 +14,7 @@ function UserSignOut({ signOut }) {
 
     // Redirecting the user to the default route (list of courses)
     navigate('/', { replace: true });
-  }, [signOut, navigate]); // Running the effect only when signOut or navigate changes
+  }, [signOut]); // Running the effect only when signOut or navigate changes
 
   return null; // Returning null since the component focused on actions rather than rendering UI
 }
