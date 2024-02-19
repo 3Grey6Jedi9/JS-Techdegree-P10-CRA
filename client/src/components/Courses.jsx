@@ -9,7 +9,7 @@ import '../styles/courses.css'
 function Courses() {
   //State to storing the list of courses
   const [courses, setCourses] = useState([]);
-  const {signOut, user} = useAuth(); // Accessing the signOut function from the authentication context
+  const {user} = useAuth(); // Accessing the signOut function from the authentication context
   const navigate = useNavigate() // Hook to handling navigation
 
 
@@ -60,7 +60,7 @@ function Courses() {
     <div className="courses-container">
        <div className="courses-header">
          <h2 className="courses-title">Courses</h2>
-         <h4>Welcome, {user.firstName} {user.lastName}!</h4>
+         <h4>Welcome!</h4>
         <button onClick={handleSignOut} className="signout-button">Sign Out</button>
     </div>
       <ul className="courses-list">

@@ -17,6 +17,7 @@ export function AuthProvider({ children, password }) { // Wrapping other compone
   useEffect(() => {
     // Checking if user data is stored in cookies
     const userData = Cookies.get('userData');
+    console.log(userData)
 
     if (userData) {
       // If user data exists in cookies, parse and set the user state
