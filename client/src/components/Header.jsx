@@ -14,8 +14,7 @@ function Header() {
     }
   }, [user, location.pathname]);
 
-  console.log(redirectPath)
-
+    console.log(redirectPath)
 
   // Function to render the header content based on authentication and path
   const renderHeaderContent = () => {
@@ -28,7 +27,13 @@ function Header() {
           <button onClick={handleSignOut} className="signout-button">Sign Out</button>
         </div>
       );
-    } else if (!user) {
+    } else if (user && location.pathname === '/courses/create') {
+
+
+
+    }
+
+    else if (!user) {
       return (
        <div className="courses-header">
           <h2 className="courses-title">Courses</h2>

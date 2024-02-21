@@ -24,7 +24,7 @@ function PrivateRoute({ component: Component }) {
     return <Component />;
   }
 
-  // If user is not authenticated, redirect to sign-in page
+  // If user is not authenticated, redirect to sign-in page and set the value for redirect (I need to add that)
   return <Navigate to="/signin" replace />;
 }
 

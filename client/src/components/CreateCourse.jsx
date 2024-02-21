@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from "../AuthContext.jsx";
 import '../styles/createcourse.css'
+import Header from './Header'
+
 
 // Component to create a new course
 function CreateCourse() { // Receiving password as a prop
