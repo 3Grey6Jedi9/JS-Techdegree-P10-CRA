@@ -4,9 +4,8 @@ import { useAuth } from '../AuthContext.jsx'; // Importing the useAuth hook
 
 function Header() {
   const location = useLocation();
-  const { user } = useAuth(); // Accessing user and signOut function from AuthContext
+  const { user, redirectPath, setRedirectPath } = useAuth(); // Accessing user and signOut function from AuthContext
   const navigate = useNavigate();
-  const [redirectPath, setRedirectPath] = useState(null);
 
   useEffect(() => {
     // If user is not authenticated, set the redirect variable to the current path
@@ -14,6 +13,8 @@ function Header() {
       setRedirectPath(location.pathname);
     }
   }, [user, location.pathname]);
+
+  console.log(redirectPath)
 
 
   // Function to render the header content based on authentication and path

@@ -13,6 +13,8 @@ export function useAuth() {
 export function AuthProvider({ children, password }) { // Wrapping other components with its context
   const [user, setUser] = useState(null);
   const [storedPassword, setStoredPassword] = useState('');
+  const [redirectPath, setRedirectPath] = useState(null);
+
 
   useEffect(() => {
     // Checking if user data is stored in cookies
@@ -44,7 +46,7 @@ export function AuthProvider({ children, password }) { // Wrapping other compone
   };
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut, password: storedPassword }}>
+    <AuthContext.Provider value={{ user, signIn, signOut, password: storedPassword, redirectPath, setRedirectPath }}>
       {children}
     </AuthContext.Provider>
   );
