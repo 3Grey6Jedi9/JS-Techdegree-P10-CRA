@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Header from './components/Header'; // Importing the Header component
+import FrontPage from './components/FrontPage'; // Importing the FrontPage component
 import Courses from './components/Courses';
 import CreateCourse from './components/CreateCourse';
 import UpdateCourse from './components/UpdateCourse';
@@ -27,8 +27,8 @@ function AppRoutes() {
   return (
     <Router>
       <Routes>
-        {/* Header is always rendered */}
-        <Route path="/" element={<Header />} />
+        {/* FrontPage is always rendered */}
+        <Route path="/" element={<FrontPage />} />
 
         {/* Unprotected Routes */}
         <Route path="/signin" element={<UserSignIn />} />

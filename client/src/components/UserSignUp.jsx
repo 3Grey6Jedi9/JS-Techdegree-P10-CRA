@@ -96,7 +96,7 @@ function UserSignUp(props) {
 
 
   const handleCancel = () => {
-    // Redirecting the user to the default route (Header)
+    // Redirecting the user to the default route (FrontPage)
     navigate('/');
   };
 
