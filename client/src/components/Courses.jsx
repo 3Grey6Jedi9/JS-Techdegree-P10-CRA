@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link, useNavigate} from "react-router-dom";
 import {useAuth} from "../AuthContext.jsx"; // Importing the useAuth hook
 import '../styles/courses.css'
-
+import Header from './Header'
 
 // Component to displaying a list of courses and a "Create New Course" button
 function Courses() {
@@ -42,27 +42,12 @@ function Courses() {
 
 
 
-  const handleSignOut = () => {
-
-      navigate('/signout'); // Calling the signOut function to sign out the user
-
-
-  }
-
-
-
-
-
 
 
 
   return (
     <div className="courses-container">
-       <div className="courses-header">
-         <h2 className="courses-title">Courses</h2>
-         <h4>Welcome!</h4>
-        <button onClick={handleSignOut} className="signout-button">Sign Out</button>
-    </div>
+       <Header /> {/* Render the Header component */}
       <ul className="courses-list">
         {courses.map((course) => (
           <li key={course.id}>

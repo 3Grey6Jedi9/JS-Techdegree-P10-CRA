@@ -21,8 +21,10 @@ import { useAuth } from './AuthContext'; // Import the useAuth hook
 
 
 
+
 function AppRoutes() {
     const { signOut } = useAuth(); // Access the signOut function from the authentication context
+
 
   return (
     <Router>
