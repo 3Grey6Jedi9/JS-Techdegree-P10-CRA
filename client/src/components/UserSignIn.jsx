@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import { useAuth } from '../AuthContext.jsx'; // Accessing authentication context
 import AliceDoor from '../assets/signin.png';
 import '../styles/signin.css'; // Importing custom styles
-import Header from './Header';
+
 
 
 // Function component for user sign-in

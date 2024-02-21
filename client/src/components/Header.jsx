@@ -15,6 +15,7 @@ function Header() {
     }
   }, [user, location.pathname]);
 
+
   // Function to render the header content based on authentication and path
   const renderHeaderContent = () => {
     // Check if the user is authenticated and the current path is '/courses'
@@ -68,3 +69,7 @@ function Header() {
 }
 
 export default Header;
+
+
+
+
