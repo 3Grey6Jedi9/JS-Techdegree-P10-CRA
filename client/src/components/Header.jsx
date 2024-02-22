@@ -19,7 +19,6 @@ function Header() {
     }
   }, [user, location.pathname]);
 
-    console.log(redirectPath)
 
   // Function to render the header content based on authentication and path
   const renderHeaderContent = () => {
