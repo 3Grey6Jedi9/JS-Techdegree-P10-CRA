@@ -12,7 +12,7 @@ function UserSignIn(props) {
   // State variables for email and password
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { signIn, redirectPath } = useAuth(); // Accessing signIn function from context
+  const { signIn, redirectPath, setRedirectPath } = useAuth(); // Accessing signIn function from context
   const navigate = useNavigate();
 
 
@@ -45,6 +45,8 @@ function UserSignIn(props) {
       if (response.status === 200) {
         signIn(response.data, password);
         navigate(redirectPath)
+        setRedirectPath('/courses')
+
       } else {
         console.error(`Authentication failed. Status: ${response.status}`);
         if (response.status === 500) {
