@@ -8,12 +8,13 @@ import '../styles/coursedetail.css' // Include specific styles
 
 
 
+
 // Defining the CourseDetail component
 function CourseDetail() {
     // Track course data, course ID, and authentication state
   const [course, setCourse] = useState(null);
   const { id } = useParams();
-  const { user, signOut, password } = useAuth(); // Accessing the authenticated user and signOut function
+  const { user, password } = useAuth(); // Accessing the authenticated user and signOut function
   const [isCourseOwner, setIsCourseOwner] = useState(true); // State to track if the user is the course owner
   const [OwnerData, setOwnerData] = useState(null); // State to see who is the course owner
 
@@ -34,16 +35,10 @@ function CourseDetail() {
           // Checking if the authenticated user's ID matches the course owner's ID
           setIsCourseOwner(user && user.id === data.userId);
           // If not the course owner, fetching user data associated with the course
-        if (!isCourseOwner) {
+        if ( isCourseOwner === false) {
 
-   const authString = `${user.emailAddress}:${password}`;
-   const base64AuthString = btoa(authString);
-   const authHeaderValue = `Basic ${base64AuthString}`;
-          const userResponse = await axios.get(`http://localhost:5001/api/courses/${data.userId}`, {
-        headers: {
-          Authorization: authHeaderValue,
-        },
-      });
+
+          const userResponse = await axios.get(`http://localhost:5001/api/courses/${data.id}`);
           if (userResponse.status === 200) {
             const userData = userResponse.data;
             setOwnerData(userData);
