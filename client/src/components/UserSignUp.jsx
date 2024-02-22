@@ -68,7 +68,7 @@ function UserSignUp(props) {
       if (response.status === 201) {
         // Successful user registration, you can redirect to a protected route or sign in the user
         signIn(response.data);
-        navigate('/courses');
+        navigate('/signin');
       } else {
         console.error(`User registration failed. Status: ${response.status}`);
         if (response.status === 500) {
