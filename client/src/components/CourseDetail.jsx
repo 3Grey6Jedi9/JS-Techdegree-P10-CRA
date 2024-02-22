@@ -16,7 +16,7 @@ function CourseDetail() {
   const [course, setCourse] = useState(null);
   const { id } = useParams();
   const { user, password } = useAuth(); // Accessing the authenticated user and signOut function
-  const [isCourseOwner, setIsCourseOwner] = useState(true); // State to track if the user is the course owner
+  const [isCourseOwner, setIsCourseOwner] = useState(false); // State to track if the user is the course owner
   const [OwnerData, setOwnerData] = useState(null); // State to see who is the course owner
 
     const navigate = useNavigate();
