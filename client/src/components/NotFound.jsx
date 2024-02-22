@@ -4,6 +4,7 @@ import '../styles/error.css' // Importing the error styles
 
 
 
+
 // Function component for displaying a "404 Not Found" error message
 function NotFound() {
   return (
