@@ -13,7 +13,7 @@ export function useAuth() {
 export function AuthProvider({ children, password }) { // Wrapping other components with its context
   const [user, setUser] = useState(null);
   const [storedPassword, setStoredPassword] = useState('');
-  const [redirectPath, setRedirectPath] = useState('/courses');
+  const [redirectPath, setRedirectPath] = useState('/courses'); // This variable will handle redirecting to previous path
 
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export function AuthProvider({ children, password }) { // Wrapping other compone
     setUser(null);
     setStoredPassword('');
 
-    // Remove user data from cookies when signed out
+    // Removing user data from cookies when signed out
     Cookies.remove('userData');
   };
 
