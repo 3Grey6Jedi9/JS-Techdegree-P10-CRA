@@ -16,9 +16,12 @@ function UserSignUp(props) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [validationErrors, setValidationErrors] = useState([]); // State to store validation errors
 
-  // Access navigation hook and signIn function from context
+
+  // Accessing navigation hook and signIn function from context
   const navigate = useNavigate();
   const { signIn } = useAuth();
+
+
 
   // Handling input changes for form fields
   const handleInputChange = (e) => {
@@ -99,6 +102,7 @@ function UserSignUp(props) {
     // Redirecting the user to the default route (FrontPage)
     navigate('/');
   };
+
 
 
 

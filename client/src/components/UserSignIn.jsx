@@ -45,8 +45,8 @@ function UserSignIn(props) {
 
       if (response.status === 200) {
         signIn(response.data, password);
-        navigate(redirectPath)
-        setRedirectPath('/courses')
+        navigate(redirectPath) // In case I tried to access a path without authentication
+        setRedirectPath('/courses') // I reset the variable to its default value
 
       } else {
         console.error(`Authentication failed. Status: ${response.status}`);
