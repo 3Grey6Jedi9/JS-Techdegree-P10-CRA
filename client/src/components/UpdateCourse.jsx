@@ -4,6 +4,7 @@ import axios from 'axios'; // For making API requests
 import {useAuth} from "../AuthContext.jsx"; // Hook for authentication context
 import '../styles/update.css' // Importing custom styles
 import '../styles/courses.css' // Importing custom styles
+import Header from "./Header";
 
 
 
@@ -160,11 +161,7 @@ function UpdateCourse({ courses }) {
 
   return (
     <div className="courses-container">
-      <div className="update-header">
-        <h2 className="courses-title">Update Course</h2>
-        <h4>Is there something you wish to change {user.firstName} {user.lastName}?</h4>
-        <button onClick={handleSignOut}>Sign Out</button>
-      </div>
+             <Header /> {/* Render the Header component */}
       {validationErrors.length > 0 && (
     <div className="validation--errors">
       <h3>Validation Errors</h3>

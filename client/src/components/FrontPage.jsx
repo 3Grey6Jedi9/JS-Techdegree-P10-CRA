@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'; // For navigation links
 import Courses_Library from '../assets/Courses_Library.jpeg'; // Importing main logo image
 
 
+
 function FrontPage({ authenticatedUser, signOut }) { // Defining the FrontPage component
   return (
     <div className="header header--flex full-screen-header">

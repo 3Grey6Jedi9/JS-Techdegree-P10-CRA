@@ -4,6 +4,8 @@ import { useAuth } from '../AuthContext.jsx'; // Importing the useAuth hook
 import '../styles/courses.css'
 import '../styles/createcourse.css'
 import '../styles/coursedetail.css' // Include specific styles
+import '../styles/update.css' // Importing custom styles
+
 
 
 
@@ -50,9 +52,15 @@ function Header() {
         </div>
 
         );
-    }
-
-    else if (!user) {
+    } else if (user && /\/courses\/\d+\/update$/.test(location.pathname)) {
+        return(
+            <div className="update-header">
+        <h2 className="courses-title">Update Course</h2>
+        <h4>Is there something you wish to change {user.firstName} {user.lastName}?</h4>
+        <button onClick={handleSignOut}>Sign Out</button>
+      </div>
+        );
+    } else if (!user) {
       return (
        <div className="courses-header">
           <h2 className="courses-title">Courses</h2>
