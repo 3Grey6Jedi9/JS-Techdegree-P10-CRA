@@ -5,9 +5,9 @@ import {useAuth} from "../AuthContext.jsx"; // Importing the useAuth hook
 import '../styles/courses.css'
 import Header from './Header'
 
-// Component to displaying a list of courses and a "Create New Course" button
+// Component for displaying a list of courses and a "Create New Course" button
 function Courses() {
-  //State to storing the list of courses
+  //State for storing the list of courses
   const [courses, setCourses] = useState([]);
   const {user} = useAuth(); // Accessing the signOut function from the authentication context
   const navigate = useNavigate() // Hook to handling navigation
