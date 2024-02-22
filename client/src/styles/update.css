@@ -61,4 +61,12 @@ input {
 }
 
 
+.header-container {
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto; /* Ensures that the container is centered */
+    background-color: transparent; /* Optional: Set a background color if needed */
+}
+
+
 

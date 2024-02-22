@@ -23,6 +23,7 @@
     padding: 10px 20px; /* Add padding for spacing */
     margin-bottom: 0;
     background-color: lightgreen;
+
 }
 
 
@@ -97,3 +98,9 @@
 }
 
 
+.header-container {
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto; /* Ensures that the container is centered */
+    background-color: transparent; /* Optional: Set a background color if needed */
+}

@@ -161,7 +161,9 @@ function UpdateCourse({ courses }) {
 
   return (
     <div className="courses-container">
+      <div className="header-container">
              <Header /> {/* Render the Header component */}
+        </div>
       {validationErrors.length > 0 && (
     <div className="validation--errors">
       <h3>Validation Errors</h3>

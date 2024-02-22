@@ -47,7 +47,9 @@ function Courses() {
 
   return (
     <div className="courses-container">
+      <div className="header-container">
        <Header /> {/* Render the Header component */}
+        </div>
       <ul className="courses-list">
         {courses.map((course) => (
           <li key={course.id}>
