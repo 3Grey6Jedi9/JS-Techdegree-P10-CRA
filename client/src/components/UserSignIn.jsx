@@ -27,6 +27,7 @@ function UserSignIn(props) {
     }
   };
 
+
   // Handling form submission (sign-in)
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
@@ -61,10 +62,17 @@ function UserSignIn(props) {
     }
   };
 
+
+
   const handleCancel = () => {
     // Redirecting the user to the default route (FrontPage)
     navigate('/');
   };
+
+
+
+
+
 
   return (
     <div className="user-signin-container">
