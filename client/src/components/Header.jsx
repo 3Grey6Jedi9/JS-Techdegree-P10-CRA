@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext.jsx'; // Importing the useAuth hook
 import '../styles/courses.css'
+import '../styles/createcourse.css'
+
+
 
 
 function Header() {
@@ -30,9 +33,13 @@ function Header() {
         </div>
       );
     } else if (user && location.pathname === '/courses/create') {
+        return(
+          <div className="create-header">
+        <h2>Create Course</h2>
+        <button onClick={handleSignOut} className="create-signout">Sign Out</button>
+                    </div>
 
-
-
+        );
     }
 
     else if (!user) {

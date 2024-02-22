@@ -83,10 +83,7 @@ function CreateCourse() { // Receiving password as a prop
 
   return (
     <div className="create-course-container">
-      <div className="create-header">
-        <h2>Create Course</h2>
-        <button onClick={handleSignOut} className="create-signout">Sign Out</button>
-      </div>
+             <Header /> {/* Render the Header component */}
       {validationErrors.length > 0 && (
         <div className="validation--errors">
           <h3>Validation Errors</h3>
