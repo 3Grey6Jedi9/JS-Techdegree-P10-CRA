@@ -6,14 +6,16 @@ import '../styles/createcourse.css'
 import Header from './Header'
 
 
-// Component to create a new course
-function CreateCourse() { // Receiving password as a prop
+
+
+// Component for creating a new course
+function CreateCourse() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [estimatedTime, setEstimatedTime] = useState('');
   const [materialsNeeded, setMaterialsNeeded] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
-  const { signOut, user, password } = useAuth();
+  const { user, password } = useAuth();
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -72,18 +74,29 @@ function CreateCourse() { // Receiving password as a prop
     }
   };
 
+
+
+  // Cancel button action
   const handleCancel = () => {
     navigate('/courses');
   };
 
+
+
+
+  // SignOut button action
   const handleSignOut = () => {
         navigate('/signout');
 
   };
 
+
+
+
+
   return (
     <div className="create-course-container">
-             <Header /> {/* Render the Header component */}
+             <Header /> {/* Rendering the Header component */}
       {validationErrors.length > 0 && (
         <div className="validation--errors">
           <h3>Validation Errors</h3>

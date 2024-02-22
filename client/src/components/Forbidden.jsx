@@ -4,7 +4,7 @@ import '../styles/error.css' // Importing the error styles
 
 
 
-// Function component to display a "403 Forbidden" error message
+// Function component for displaying a "403 Forbidden" error message
 function Forbidden() {
   return (
         <div className="forbcontainer">

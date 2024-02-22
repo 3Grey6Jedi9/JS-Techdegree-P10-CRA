@@ -140,7 +140,7 @@ function CourseDetail() {
 
   return (
       <div className="detail-container">
-             <Header /> {/* Render the Header component */}
+             <Header /> {/* Rendering the Header component */}
         {user && isCourseOwner && (
             <div className="detail-header-buttons">
               <Link to="/courses" className="signout-button">Go back to Courses</Link>
