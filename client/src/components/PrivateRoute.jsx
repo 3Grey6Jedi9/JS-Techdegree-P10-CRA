@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 
 // Protecting routes from unauthorized access by checking user authentication
 function PrivateRoute({ component: Component }) {
-  // Accessing user information from the AuthContext
-  const { user } = useAuth();
-  // Tracking loading state while authentication status is determined
+  const { user, setRedirectPath } = useAuth();
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
-  // Effect Hook: Updates loading state when user changes
   useEffect(() => {
+    // Immediately set loading to false once user info is checked
     setLoading(false);
-  }, [user]);
 
-  // If still loading, return null
+    if (!user) {
+      // Set the redirect path only if the user is not authenticated
+      setRedirectPath(location.pathname);
+    }
+  }, [user, location.pathname, setRedirectPath]);
+
+  // If still loading, return null to indicate nothing is being rendered yet
   if (loading) {
     return null;
   }
@@ -22,10 +26,11 @@ function PrivateRoute({ component: Component }) {
   // If user is authenticated, render the provided component
   if (user) {
     return <Component />;
+  } else {
+    // If user is not authenticated, redirect to sign-in page
+    // No need to set redirect path here as it's been set in useEffect
+    return <Navigate to="/signin" replace />;
   }
-
-  // If user is not authenticated, redirect to sign-in page and set the value for redirect (I need to add that)
-  return <Navigate to="/signin" replace />;
 }
 
 export default PrivateRoute;
