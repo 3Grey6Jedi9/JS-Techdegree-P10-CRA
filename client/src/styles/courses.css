@@ -26,6 +26,21 @@
 
 }
 
+.courses-header-noauth {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px; /* Add padding for spacing */
+    margin-bottom: 0;
+    background-color: lightgreen;
+
+}
+
+
+
+
+
 
 .detail-header-buttons {
 

@@ -62,7 +62,7 @@ function Header() {
         );
     } else if (!user) {
       return (
-       <div className="courses-header">
+       <div className="courses-header-noauth">
           <h2 className="courses-title">Courses</h2>
           <h4></h4>
           <button onClick={handleSignUp} className="signout-button">Sign Up</button>

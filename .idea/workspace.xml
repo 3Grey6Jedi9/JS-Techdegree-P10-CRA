@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88fac629-af25-4684-9c83-ab885c2861c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/UpdateCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UpdateCourse.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/courses.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/courses.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/update.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/update.css" afterDir="false" />
-    </list>
+    <list default="true" id="88fac629-af25-4684-9c83-ab885c2861c4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
