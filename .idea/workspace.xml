@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/client/src/assets/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/react.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/assets/woody.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CourseDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CourseDetail.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
