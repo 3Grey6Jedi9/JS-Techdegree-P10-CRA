@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext.jsx'; // Importing the useAuth hook
 import '../styles/courses.css'
 import '../styles/createcourse.css'
@@ -11,6 +11,8 @@ import '../styles/update.css' // Importing custom styles
 
 
 
+/* This component displays the top menu bar for the application and includes buttons for signin in and signing up (if there's
+not an authenticated user) or the user's name and a button for signin out (if there's an authenticated user).*/
 function Header() {
   const location = useLocation();
   const { user, redirectPath, setRedirectPath } = useAuth(); // Accessing user and signOut function from AuthContext
@@ -24,9 +26,9 @@ function Header() {
   }, [user, location.pathname]);
 
 
-  // Function to render the header content based on authentication and path
+  // Function for rendering the header content based on authentication and path
   const renderHeaderContent = () => {
-    // Check if the user is authenticated and the current path is '/courses'
+    //Checking if the user is authenticated and the current path is '/courses'
     if (user && location.pathname === '/courses') {
       return (
         <div className="courses-header">
@@ -60,7 +62,7 @@ function Header() {
         <button onClick={handleSignOut}>Sign Out</button>
       </div>
         );
-    } else if (!user) {
+    } else if (!user) { // In case the user is not authenticated
       return (
        <div className="courses-header-noauth">
           <h2 className="courses-title">Courses</h2>
@@ -74,21 +76,28 @@ function Header() {
 
 
 
+  // Handling the sign out action
   const handleSignOut = () => {
 
-      navigate('/signout'); // Calling the signOut function to sign out the user
+      navigate('/signout');
 
   }
 
+
+  // Handling the sign up action
   const handleSignUp = () => {
 
       navigate('/signup');
   }
 
+
+
+    // Handling the sign in action
   const handleSignIn = () => {
 
       navigate('/signin');
   }
+
 
 
 
