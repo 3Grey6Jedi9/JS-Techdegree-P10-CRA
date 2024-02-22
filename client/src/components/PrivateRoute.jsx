@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 
+
+
 // Protecting routes from unauthorized access by checking user authentication
 function PrivateRoute({ component: Component }) {
   const { user, setRedirectPath } = useAuth();
@@ -13,7 +15,7 @@ function PrivateRoute({ component: Component }) {
     setLoading(false);
 
     if (!user) {
-      // Set the redirect path only if the user is not authenticated
+      // Setting the redirect path only if the user is not authenticated
       setRedirectPath(location.pathname);
     }
   }, [user, location.pathname, setRedirectPath]);
