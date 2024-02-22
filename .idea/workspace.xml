@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88fac629-af25-4684-9c83-ab885c2861c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/PrivateRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PrivateRoute.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/AuthContext.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
