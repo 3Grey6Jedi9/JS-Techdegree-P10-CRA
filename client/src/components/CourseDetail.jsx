@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from '../AuthContext.jsx'; // Access authentication context
+import { useAuth } from '../AuthContext.jsx'; // Accessing authentication context
 import ReactMarkdown from 'react-markdown';
-import '../styles/courses.css' // Include relevant styles
-import '../styles/coursedetail.css' // Include specific styles
+import '../styles/courses.css' // Including relevant styles
+import '../styles/coursedetail.css' // Including specific styles
 import Header from "./Header";
 
 
@@ -12,12 +12,12 @@ import Header from "./Header";
 
 // Defining the CourseDetail component
 function CourseDetail() {
-    // Track course data, course ID, and authentication state
+    // Tracking course data, course ID, and authentication state
   const [course, setCourse] = useState(null);
   const { id } = useParams();
   const { user, password } = useAuth(); // Accessing the authenticated user and signOut function
   const [isCourseOwner, setIsCourseOwner] = useState(false); // State to track if the user is the course owner
-  const [OwnerData, setOwnerData] = useState(null); // State to see who is the course owner
+  const [OwnerData, setOwnerData] = useState(null); // State to collect the course owner data
 
     const navigate = useNavigate();
 
@@ -26,26 +26,26 @@ function CourseDetail() {
 
 
     useEffect(() => {
-    // Function to fetching the course details from your API
+    // Function that fetchs the course details from the API
     async function fetchCourseDetail() {
       try {
+        // Getting the course details
         const response = await axios.get(`http://localhost:5001/api/courses/${id}`);
         if (response.status === 200) {
           const data = response.data;
           setCourse(data);
           // Checking if the authenticated user's ID matches the course owner's ID
           setIsCourseOwner(user && user.id === data.userId);
+
           // If not the course owner, fetching user data associated with the course
         if ( isCourseOwner === false) {
-
-
           const userResponse = await axios.get(`http://localhost:5001/api/courses/${data.id}`);
           if (userResponse.status === 200) {
             const userData = userResponse.data;
             setOwnerData(userData);
           }
         }
-      } else {
+      } else { // Handling different kind of errors
 
           console.error(`Network response was not ok. Status: ${response.status}`);
           if (response.status === 404){
