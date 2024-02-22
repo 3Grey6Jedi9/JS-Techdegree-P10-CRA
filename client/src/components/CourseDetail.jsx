@@ -5,6 +5,7 @@ import { useAuth } from '../AuthContext.jsx'; // Access authentication context
 import ReactMarkdown from 'react-markdown';
 import '../styles/courses.css' // Include relevant styles
 import '../styles/coursedetail.css' // Include specific styles
+import Header from "./Header";
 
 
 
@@ -139,11 +140,7 @@ function CourseDetail() {
 
   return (
       <div className="detail-container">
-      <div className="courses-header">
-         <h2 className="courses-title">Course Detail</h2>
-         <h4>I hope you like this course!</h4>
-        <button onClick={handleSignOut} className="signout-button">Sign Out</button>
-    </div>
+             <Header /> {/* Render the Header component */}
         {user && isCourseOwner && (
             <div className="detail-header-buttons">
               <Link to="/courses" className="signout-button">Go back to Courses</Link>

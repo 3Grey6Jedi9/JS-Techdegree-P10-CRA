@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext.jsx'; // Importing the useAuth hook
 import '../styles/courses.css'
 import '../styles/createcourse.css'
+import '../styles/coursedetail.css' // Include specific styles
+
 
 
 
@@ -37,6 +39,15 @@ function Header() {
         <h2>Create Course</h2>
         <button onClick={handleSignOut} className="create-signout">Sign Out</button>
                     </div>
+
+        );
+    } else if (user && /\/courses\/\d+$/.test(location.pathname)) {
+        return(
+        <div className="courses-header">
+         <h2 className="courses-title">Course Detail</h2>
+         <h4>I hope you like this course!</h4>
+        <button onClick={handleSignOut} className="signout-button">Sign Out</button>
+        </div>
 
         );
     }
