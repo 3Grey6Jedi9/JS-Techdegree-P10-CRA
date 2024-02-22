@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext.jsx'; // Importing the useAuth hook
+import '../styles/courses.css'
+
 
 function Header() {
   const location = useLocation();

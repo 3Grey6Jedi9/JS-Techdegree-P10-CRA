@@ -13,7 +13,7 @@ export function useAuth() {
 export function AuthProvider({ children, password }) { // Wrapping other components with its context
   const [user, setUser] = useState(null);
   const [storedPassword, setStoredPassword] = useState('');
-  const [redirectPath, setRedirectPath] = useState(null);
+  const [redirectPath, setRedirectPath] = useState('/courses');
 
 
   useEffect(() => {
